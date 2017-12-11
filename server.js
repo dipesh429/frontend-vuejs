@@ -4,11 +4,11 @@ var serveStatic = require('serve-static');
 
 app = express();
 
-var history = require('connect-history-api-fallback');
+// var history = require('connect-history-api-fallback');
 
-app.use(history({
-  verbose: true
-}));
+// app.use(history({
+//   verbose: true
+// }));
 
 
 app.use(serveStatic(__dirname + "/dist"));
