@@ -22,7 +22,10 @@
 
               
               <v-flex xs12>
-
+                
+                 <v-alert color="error" v-if="checkerror" icon="warning" value="true">
+                  {{errors }}
+                </v-alert>
                 
                 <v-text-field label="Quantity" v-model= 'quantity' required></v-text-field>
                  <v-alert color="error" v-if="errors.quantity" icon="warning" value="true">
@@ -73,6 +76,16 @@
 
     computed:{
 
+
+      checkerror(){
+
+        if(this.errors!='' && this.errors.quantity==undefined && this.errors.location==undefined){
+
+          return true
+        }
+
+      },
+
       isAuthenticated(){
 
       return this.$store.getters.isAuthenticated
@@ -100,6 +113,8 @@
 
 
          this.buyerid= this.$store.getters.get_user_data.id
+
+         this.errors=''
 
          this.$http.post('api/buyers/'+this.buyerid+'/products/'+ this.product+'/transactions',data)
                    .then(success=>{
