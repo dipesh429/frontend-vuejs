@@ -17,6 +17,16 @@
             <v-list-tile-title>Home</v-list-tile-title>
           </v-list-tile-content>
         </v-list-tile>
+
+        <v-list-tile @click="" to='/products' exact>
+          <v-list-tile-action >
+            <v-icon>card_giftcard</v-icon>
+          </v-list-tile-action>
+          <v-list-tile-content>
+            <v-list-tile-title>Products</v-list-tile-title>
+          </v-list-tile-content>
+        </v-list-tile>
+
         <v-list-tile @click="" to='signup' v-if="!isAuthenticated">
           <v-list-tile-action >
             <v-icon>contact_mail</v-icon>
@@ -37,7 +47,7 @@
 
         <v-list-tile @click="" to='transactions' v-if="isAuthenticated">
           <v-list-tile-action>
-            <v-icon>card_giftcard </v-icon>
+            <v-icon>swap_horiz </v-icon>
           </v-list-tile-action>
           <v-list-tile-content>
             <v-list-tile-title>Transactions</v-list-tile-title>
@@ -71,7 +81,7 @@
       Products</v-btn>
 
             <v-btn flat  to='transactions' class="white--text hidden-xs-only" v-if="isAuthenticated">
-              <v-icon left >card_giftcard
+              <v-icon left >swap_horiz
 </v-icon>
               Transactions</v-btn>
 
