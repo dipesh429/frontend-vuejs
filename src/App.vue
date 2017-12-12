@@ -62,9 +62,13 @@
     
     <v-toolbar-items  >
 
-           <v-btn flat to='/' class="white--text hidden-xs-only" >
+           <v-btn flat to='/' class="white--text hidden-xs-only" exact>
       <v-icon left >home</v-icon>
       Home</v-btn>
+
+          <v-btn flat to='/products' class="white--text hidden-xs-only" >
+      <v-icon left >card_giftcard</v-icon>
+      Products</v-btn>
 
             <v-btn flat  to='transactions' class="white--text hidden-xs-only" v-if="isAuthenticated">
               <v-icon left >card_giftcard

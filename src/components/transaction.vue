@@ -4,7 +4,10 @@
 	<h2>Your total transactions till date</h2>
 <br>
 <br>
+
 <br>
+
+	
 		
 	<v-layout row wrap  >
 
@@ -31,7 +34,7 @@
     </v-alert>
      
 
-	    <v-expansion-panel-content v-for="transaction in transactionsSeller" :key="transaction.id">
+	    <v-expansion-panel-content class="pa-0" v-for="transaction in transactionsSeller" :key="transaction.id">
     					 <div slot="header"><div>  {{transform(transaction.created_at)}} </div> </div>
 
 
@@ -42,18 +45,18 @@
             
               <v-layout row>
 
-                <v-flex xs3>
+                <v-flex xs5>
                   <v-card-media :src='transaction.product.image' height="200px" contain> </v-card-media>
                 </v-flex>
 
-                <v-flex sm8	 offset-sm1>
+                <v-flex xs6	 offset-xs1>
                 	<div>
                     <div class="headline">{{transaction.product.name}}</div>
                     
                     <br>
   					Buyer:
-  					 <v-chip color="indigo" text-color="white">
-      <v-avatar>
+  					 <v-chip color="indigo" text-color="white" class="ma-0">
+      <v-avatar class="ma-0">
         <v-icon>account_circle</v-icon>
       </v-avatar>
        {{transaction.buyer.name}} ({{transaction.buyer.email}}) 

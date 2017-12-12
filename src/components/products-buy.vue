@@ -1,7 +1,31 @@
 	<template>
 
 	<v-container>
+
+		<v-alert color="success"  :value='show' >
+       Your order was done successfully.. Do you want to see transaction?   
+       <router-link to="transactions" tag="v-btn" > Click here </router-link>  
+    </v-alert>
+
+	<br>
+
+
+	 <div v-if="categories.length==0" class="text-xs-center">
+
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+            
+            <v-progress-circular indeterminate v-bind:size="70" v-bind:width="5" color="purple"></v-progress-circular>
+          </div>
+
+
+
 	<v-layout row wrap v-for="(category,i) in categories" :key="category.id">
+	
 
 		<!-- <v-flex xs12 > -->
 			<v-expansion-panel>
@@ -59,7 +83,7 @@
 
 						
 					</v-chip>	
-                    <order :product="product.id" :categories="categories" :status="product.status" :user_id='id' @changed="edit_product"> </order>
+                    <order :product="product.id" :categories="categories" :status="product.status" :user_id='id' @changed="edit_product" @show="show=true"> </order>
                      
                   </div>
                     
@@ -92,7 +116,7 @@
 	export default{
 
 		data(){
-			return {products:'',id:'',color:'',categories:'',products:[]}
+			return {products:'',id:'',color:'',categories:'',products:[],show:false}
 		},
 
 		components:{

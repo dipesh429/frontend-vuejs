@@ -177,10 +177,11 @@
                    .then(products=>{
                   //success1
 
-                   
+                   this.$router.push('products')
 
                     console.log(products)
-                      this.product_id=products.body.data.id
+
+                    this.product_id=products.body.data.id
 
                      
 
@@ -205,6 +206,7 @@
                              this.price=''
                              this.image_url=''
                              this.category=''
+                             
 
                             console.log(success)
                           },error=>{

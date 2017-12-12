@@ -142,6 +142,7 @@
               
       })
               this.$emit('changed',this.products)
+              this.$emit('show','')
               this.dialog=false 
 
             },errors=>{
